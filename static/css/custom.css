@@ -1,0 +1,357 @@
+
+
+.copyright{
+    position: fixed!important;
+}
+.unlimited-access .unlimited-access-img {
+    margin: 0!important;
+}
+
+
+.app-header{
+    border-bottom: 1px solid rgb(229,234,239) !important;
+}
+
+.website-view{
+    box-shadow: 0 0 3px 0 #A9A9A9;
+    border-radius: 0!important;
+}
+.website-view li{
+    border:0px!important;
+}
+
+
+/* Dashboard */
+.body-wrapper>.container-fluid,
+.body-wrapper>.container-lg,
+.body-wrapper>.container-md,
+.body-wrapper>.container-sm,
+.body-wrapper>.container-xl,
+.body-wrapper>.container-xxl{
+    margin-left: 0!important;
+    margin-right: 0!important;
+    max-width: 99.5%!important;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    max-width: 99.5%!important;  
+}
+.row-col {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card-col {
+    flex: 0 0 auto;
+    width: 32.3333333333%;
+    margin-right: 20px;
+}
+
+.card-inner {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: rgb(0 0 0 / 4%) 0 3px 5px;
+    overflow: hidden;
+    z-index: 0;
+    color: #0d1218;
+    border:1px solid #EEEEEE!important;
+    background-color: white!important;
+}
+.card-icon {
+    width: 90px;
+    height: 90px;
+    color: #44aba8!important;
+    border:1px solid #44aba8;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, .12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline-end: 25px;
+}
+p.card-number {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0;
+}
+p.card-title {
+    margin: 0;
+}
+.card-title {
+    margin-bottom: .5rem;
+}
+
+.tools .card-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.card-icon svg {
+    height: 34px;
+    width: auto;
+    fill: #47BAB7;
+}
+
+
+
+.submenu{
+    background-color:#F8F9FA!important;
+    margin-left: 10px;
+
+    line-height: auto!important;
+    border-radius: 10px;
+}
+.submenu li{
+    border-radius: 10px;
+
+    margin-top: 2px;
+}
+
+.submenu li a{
+    color: rgb(49, 49, 49);
+
+}
+
+.brand-bg{
+    background-color: #47BAB7!important;
+    color:white!important;
+}
+.active{
+    background-color: #47BAB7!important;
+    color: white!important;
+
+}
+.text-primary{
+    color: #47BAB7!important;
+}
+
+.bg-primary{
+    background-color: #47BAB7!important;
+
+}
+
+
+
+body{
+    background-color: #F4F9FE !important;
+}
+
+
+/* Centering the table contents */
+.table-container {
+    text-align: center;
+}
+
+
+
+
+/* Select Package */
+/* Add this CSS to style the custom radio buttons */
+.radio-custom {
+    opacity: 0; /* Hide default radio button */
+    position: absolute;
+  }
+  
+  /* Style the label to resemble a custom radio button */
+  .radio-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Create the visual appearance of the radio button */
+  .radio-label:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #47BAB7; /* Change border color */
+    background-color: transparent;
+  }
+  
+  /* Style the radio button when checked */
+  .radio-custom:checked + .radio-label:before {
+    background-color: #47BAB7; /* Change background color */
+  }
+
+
+
+/* Info App */
+.cke_editable h1{
+  font-size: 26px!important;
+}
+.cke_editable h2{
+  font-size: 23px!important;
+}
+.cke_editable h2{
+  font-size: 20px!important;
+  font-weight: bold!important;
+}
+.tableapp table{
+  border: 1px solid #DFDFDF;
+  vertical-align: middle;
+}
+.tableapp th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #47BAB7;
+  color: white;
+}
+.tableapp thead tr{
+  border: 1px solid #47BAB7;
+}
+.table-bordered>:not(caption)>*>* {
+  border-width: 0!important;
+}
+
+.app .headdiv{
+  width: 160px;
+  display: inline-block;
+  margin-left: -10px;
+  margin-bottom: -12px;
+}
+
+.app .head{
+  position: absolute;
+  display:inline-block;
+  margin:-25px 0!important;
+  height:38px
+}
+
+.app .head::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: -10px;
+  bottom: -7px;
+  border-color: rgba(0, 0, 0, 0) #133091 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  border-style: inset solid inset inset;
+  border-width: 0 10px 7px;
+}
+.app .head::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  right: -40px;
+  top: 0px;
+  border-color: rgba(0, 0, 0, 0) #47BAB7 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  border-style: inset solid inset inset;
+  border-width: 19px 20px 19px;
+  transform: rotate(180deg);
+}
+
+/* Tinymce*/
+.tox-promotion, .tox-statusbar__branding{
+  display: none!important;
+}
+.tox .tox-promotion{
+    display: none!important;
+}
+.tox .tox-statusbar__right-container{
+    display: none!important;
+}
+
+
+/*CK Editor*/
+#cke_1_contents{
+    height: 450px!important;
+}
+
+#generateTitleButton, #generateintroButton, #generateoutlineButton{
+    transition: 0.5s!important;
+    background-color: white;
+    color: #47BAB7;
+}
+#generateTitleButton:hover, #generateintroButton:hover, #generateoutlineButton:hover{
+    background-color: #47BAB7!important;
+    color: white;
+}
+
+#replaceTextButton:hover{
+    background-color: #40CDC8!important;
+}
+
+  /*Rich text editor*/
+  .RichTextArea label{
+    display: block;
+    margin: 0;
+    border: 1px solid #D0D0D0!important;
+    border-bottom: 0px solid #BDBDBD!important;
+    padding: 10px;
+  }
+  #myRichTextField{
+    background-color: white!important;
+    border: 1px solid #D0D0D0!important;
+    padding: 20px!important;
+    height: 400px!important;
+    overflow: auto;
+    font-size: 14px;
+    font-weight: 400!important;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #myRichTextField h2{
+        font-size: 20px!important;
+        font-weight: 600!important;
+  }
+
+  #myRichTextField h3{
+    font-size: 16px!important;
+    font-weight: 600!important;
+}
+
+
+
+#myRichTextField ul {
+    list-style-type: square!important;
+    margin-left: 20px!important;
+    margin-top: 20px!important;
+  }
+
+  #myRichTextField table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    /* Add any other styles you want for your table */
+  }
+  
+  #myRichTextField th, #myRichTextField td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #myRichTextField th {
+    background-color: #f2f2f2;
+    /* Add any other styles for table headers */
+  }
+  
+  #myRichTextField tr:hover {
+    background-color: #f5f5f5;
+    /* Add any other styles for hover effect */
+  }
+  #myRichTextField b {
+    font-weight: bold;
+  }
+  
+  #myRichTextField em {
+    font-style: italic;
+  }
+
+
+  #cke_1_contents {
+    height: 300px !important;
+}
+  

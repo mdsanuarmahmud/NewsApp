@@ -1,0 +1,61 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load static %}
+{% block dashcontent %}
+
+<script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+
+<div class="container mt-2">
+ 
+    <a class="border bg-white mb-2 ms-1" style="border-radius:50%;box-shadow: 0 0 3px 0 black; display: inline-block; height: 45px; width: 45px;" href="{% url "posted_news" %}">
+        <img style="margin-top: 8px;margin-left: 4px;" width="30px" src="{% static "images/app/return.png" %}" alt="">
+    </a>
+
+    <h1 class="h4 border rounded bg-white p-3"> title: {{generated_news.title}} </h1>
+
+    <div class="mb-4 mt-1">
+        <!-- Hover added -->
+        <div class="list-group">
+            <button
+                type="button"
+                class="list-group-item list-group-item-action"
+                aria-current="true"
+            >
+            Operation Status : {{generated_news.status}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                Error Status : {{generated_news.error}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                Website Url : {{generated_news.website_url}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                WordPress Username : {{generated_news.username}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                WordPress App pass : {{generated_news.app_pass}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                Post Status : {{generated_news.post_status}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                Category Name : {{generated_news.category_name}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                Image Status: {{generated_news.img_status}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                Generated Time : {{generated_news.generated_time}}
+            </button>
+        </div>
+
+    </div>
+    <textarea name="content" id="id_content">{{generated_news.content }}</textarea>
+    <script>
+        CKEDITOR.replace('id_content');
+    </script>
+
+</div>
+
+{% endblock dashcontent %}

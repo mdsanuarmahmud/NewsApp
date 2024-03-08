@@ -1,0 +1,38 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load static %}
+{% block dashcontent %}
+        
+ 
+<div class="brand-bg rounded mb-5 ms-2 mt-3">
+  <h1 class="h4 py-3 mt-1 mb-0 ms-3 text-white">Please Choose a Package</h1>
+</div>
+
+
+<div class="container rounded mb-5">
+  <form method="post" action="{% url 'purchase_credits' %}">
+    {% csrf_token %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for package in credit_packages %}
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title px-3 py-2 mt-1">{{ package.name }}</h5>
+              <span class="card-text d-block border rounded px-3 py-2 mt-1">{{ package.price }} USD</span>
+              <span class="card-text d-block border rounded px-3 py-2 mt-1">{{ package.credits }} credits</span>
+              <span class="card-text d-block border rounded px-3 py-2 mt-1">
+                <input type="radio" id="package_{{ package.id }}" name="package_id" value="{{ package.id }}" required class="radio-custom">
+                <label for="package_{{ package.id }}" class="radio-label">Choose</label>
+              </span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button type="submit" class="btn btn-primary ms-1 mt-3 py-2 px-4">Purchase</button>
+  </form>
+</div>
+
+
+{% endblock dashcontent %}
+
+

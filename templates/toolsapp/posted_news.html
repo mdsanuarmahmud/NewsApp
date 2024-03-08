@@ -1,0 +1,58 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load static %}
+{% block dashcontent %}
+
+        
+<div class="container tableapp">
+    <div class="brand-bg rounded mb-5 mt-3">
+        <h1 class="h4 py-3 mt-1 mb-0 ms-3 text-white"> Posted News</h1>
+    </div>
+    <div class="row my-4">
+        <div class="col-12">
+            <a
+            name=""
+            id=""
+            class="btn btn-muted mt-0 mb-1"
+            href="{% url 'posted_news' %}"
+            role="button"
+            >
+                <i class="ti ti-reload me-1"></i>Refresh
+            </a>
+            <a
+                name=""
+                id=""
+                class="btn btn-danger"
+                href="{% url 'delete_all_posted_news' %}"
+                role="button"
+                style="float: right;"
+            >Delete All <i class="ti ti-trash"></i></a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered" style="border-color: #DEE2E7;">
+        <thead>
+            <tr>
+                <th class="count-column" style="width: 40px;">SL</th>
+                <th>Title</th>
+                <th style="width: 100px;">View</th>
+                <th style="width: 100px;">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for completed in complete_generated_news %}
+                <tr>
+                    <td class="p-0 px-3" style="width: 40px;">{{ forloop.counter }}</td>
+                    <td class="p-0 px-2">{{ completed.source_link }}</td>
+                    <td class="p-0 px-3 py-1" style="width: 100px;"><a href="{% url 'posted_news_single_view' completed.id %}" class="btn btn-primary p-1 px-2"> <i class="ti ti-eye"></i> </a></td>
+                    <td class="p-0 px-3 py-1" style="width: 100px;"><a href="{% url 'delete_posted_news' completed.id %}" class="btn btn-danger p-1 px-2"><i class="ti ti-trash"></i></a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+</div>
+
+{% endblock dashcontent %}
+
+

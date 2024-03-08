@@ -1,0 +1,80 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load static %}
+{% block dashcontent %}
+
+<script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+
+<div class="container mt-2">
+
+    <a class="border bg-white mb-2 ms-1" style="border-radius:50%;box-shadow: 0 0 3px 0 black; display: inline-block; height: 45px; width: 45px;" href="{% url "complete_generated_news" %}">
+        <img style="margin-top: 8px;margin-left: 4px;" width="30px" src="{% static "images/app/return.png" %}" alt="">
+    </a>
+
+    <form action="" class="mb-5" method="post">
+        {% csrf_token %}
+
+        <input class="h4 rounded bg-white p-3" name="title" value="{{generated_news.title}}" style="border:1px solid #D8DDE1; width:100%">
+        <div class="mb-4 mt-1">
+            <div class="list-group">
+                <button
+                    type="button"
+                    class="list-group-item list-group-item-action"
+                    aria-current="true"
+                >
+                Operation Status : {{generated_news.status}}
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <textarea name="content" id="id_content">{{generated_news.content }}</textarea>
+                <script>
+                    CKEDITOR.replace('id_content');
+                </script>
+            </div>
+
+            <div class="col-md-4 rounded justify-content-end align-items-end">
+                        <div class="row g-2">
+                            <div class="rounded justify-content-end align-items-end" style="background:#F8F8F9;border:1px solid #DFDFDF">
+                                <div class="p-3">
+                                    <label class="form-label h5 mb-3 text-center d-block">Options</label>
+                                    <select name="website_id" id="website_id" class="form-select bg-white" aria-label="Default select example" required>
+                                        <option selected disabled value="">Select Website</option>
+                                        {% for single_website in website  %}
+                                        <option value="{{single_website.id}}">{{single_website.website_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                    
+                            
+                                    <select name="img_status" id="img_status" class="form-select mt-3 bg-white" aria-label="Default select example">
+                                        <option selected value="enable">Image Enable</option>
+                                        <option value="disable">Image Disable</option>
+                                    </select>
+                            
+                                    <div class="input-group mt-3">
+                                        <input name="category" id="category" type="text" class="form-control bg-white" placeholder="Category Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    </div>
+                            
+                                    <select name="status" id="post_status" class="form-select mt-3 bg-white" aria-label="Default select example">
+                                        <option selected disabled value="">Select Post Type</option>
+                                        <option value="publish">Publish</option>
+                                        <option value="draft">Draft</option>
+                                        <option value="draft">Schedule</option>
+                                    </select>
+                                    <div class="input-group mt-3">
+                                        <input type="date" id="scheduled_date" class="form-control bg-white" name="scheduled_date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+    
+        </div>
+        <button type="submit" id="startposting" class="btn brand-bg mt-4 mb-5 px-5 py-2 fs-5">Send to Website</button>
+    </form>
+</div>
+
+{% endblock dashcontent %}
